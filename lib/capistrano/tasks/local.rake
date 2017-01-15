@@ -21,7 +21,7 @@ namespace :local do
   desc 'Post a message to slack'
   task :slack do
     run_locally do
-      execute :curl, "-X POST --data-urlencode 'payload={\"channel\": \"#dev_channel\", \"text\": \"Votre attention testeurs humains !\nUne nouvelle version du site *Jaiye* est disponible:\n • *#{fetch(:env_name)}*: #{fetch(:server_name)}\", \"icon_emoji\": \":robot_face:\"}' https://hooks.slack.com/services/SLACK_KEY"
+      execute :curl, "-X POST --data-urlencode 'payload={\"channel\": \"#dev_channel\", \"text\": \"Votre attention testeurs humains !\nUne nouvelle version du site est disponible:\n • *#{fetch(:env_name)}*: #{fetch(:server_name)}\", \"icon_emoji\": \":robot_face:\"}' https://hooks.slack.com/services/SLACK_KEY"
     end
   end
 
